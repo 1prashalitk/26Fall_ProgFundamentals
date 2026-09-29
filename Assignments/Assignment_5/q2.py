@@ -1,12 +1,12 @@
 def rectangle_stats(length, width):
-    area = length*width
-    perimeter = 2*(length + width)
+    area = length*width # area formula
+    perimeter = 2*(length + width) #perimeter formula
     return area, perimeter
 
-length = float(input("Enter the length: "))
-width = float(input("Enter the width: "))
+length = float(input("Enter the length: ")) #asking the user
+width = float(input("Enter the width: "))  #asking the user
 
 area, perimeter = rectangle_stats(length, width)
 
-print(f"Area: {area:.2f}")
+print(f"Area: {area:.2f}") # the :.2f to make it round to 2 decimals 
 print(f"Perimeter: {perimeter:.2f}")
