@@ -3,8 +3,8 @@ def rectangle_stats(length, width):
     perimeter = 2*(length + width) #perimeter formula
     return area, perimeter
 
-length = float(input("Enter the length: ")) #asking the user
-width = float(input("Enter the width: "))  #asking the user
+length = float(input("Enter the length: ")) #asking the user for length
+width = float(input("Enter the width: "))  #asking the user for width
 
 area, perimeter = rectangle_stats(length, width)
 
