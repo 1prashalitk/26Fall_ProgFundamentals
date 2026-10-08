@@ -31,18 +31,17 @@ while True:
     print("5. Checkout")
 
 user_options= input("Please choose an option (1-5): ")
-if user_options = 1:
+if user_options == 1:
     print(menu)
-if user_options = 2:
+if user_options == 2:
     print(input("Adding which item?: ")
           print(input("How many?: ")
-elif user_options = 3:
+elif user_options == 3:
     print("Removing which item?: ")
     print(input)"How many?: ")
 elif user_options = 4:
     print(f"Here is your order {
                 
-
 
 
 
