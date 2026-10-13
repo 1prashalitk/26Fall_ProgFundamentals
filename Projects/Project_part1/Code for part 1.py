@@ -71,7 +71,7 @@ def receipt(name,order,menu, user_member):
           print(" Have a greet day and Thank You for shopping!")
 
 while True:
-     print("\n1. View menu")
+     print("1. View menu")
      print("2. Add an item")
      print("3. Remove an item")
      print("4. View my order")
@@ -92,7 +92,7 @@ while True:
           quantity=input("How many?: ")
           print("REMOVED")
      elif user_options == "4":
-          print("Here is your order")
+          show_order(order, menu)
      elif user_options == "5":
           receipt= receipt(name,order,menu, user_member)
 
