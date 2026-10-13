@@ -15,15 +15,20 @@ order = []
 
 def greet_user(name):
      print(f"Hello {name}, Welcome to {cafe_name} ")
-user_input= input("Enter Your name: ")
-greet_user= (user_input)
-print(f"Hello {greet_user}, Welcome to the Python Cafe!")
+name= input("Enter Your name: ")
+greet_user(name)
 
 
 def show_menu(menu):
-    print(" MENU ")
-    for item, price in menu:
-        print(f"{item}: ${price:.2f}")
+    if (order) == 0:
+        print("You have nothing in your cart.")
+    else:
+        print("--- Here is your ORDER---")
+        for item in order:
+            print(f"{item}: ${menu:.2f}")
+        print(f"Items: {(order)}")
+
+    
 
 def show_order(order, menu):
      if (order)==0:
@@ -31,9 +36,9 @@ def show_order(order, menu):
      else:
           print("HERE IS YOUR ORDER")
 
-def Calculate_subtotal(order,menu):
+def cal_subtotal(order,menu):
      for item in order:
-          subtotal+= menu[item]
+        subtotal= menu[item]
      return subtotal
 
 
@@ -50,18 +55,17 @@ def discount(subtotal, user_member):
           discount=0
      return discount
 def receipt(name,order,menu, user_member):
-     subtotal= Calculate_subtotal(order,menu)
-     discount= discount(subtotal, user_member)
-     discounted_subtotal= subtotal- discount
-     tax= discounted_subtotal + tax_rate
+     cal_subtotal(order,menu)
+     discount(cal_subtotal, user_member)
+     discounted_subtotal= cal_subtotal- discount
      total= discounted_subtotal + tax_rate
 
      print(" {cafe_name} RECEIPT " )
 
      for item in order:
-          print(f"{item}: ${menu[itme]}:.2f")
+          print(f"{item}: ${menu[item]}:.2f")
 
-     print(f"Subtotal: ${subtotal:.2f}")
+     print(f"Subtotal: ${cal_subtotal:.2f}")
      print(f"Discount: -${discount:.2f}")
      print(f"Tax: ${tax_rate:.2f}")
      print(f"Total: ${total:.2f}")
@@ -83,16 +87,30 @@ while True:
 
      if user_options == "1":
           show_menu(menu)
-     if user_options == "2":
-          which_item= input("Adding which item?: ")
-          quantity= input("How many?: ")
-          print("ADDED")
+          
+
+     elif user_options == "2":
+        item = input("What would you like to order? ").lower()
+
+        if item in menu:
+            quantity = int(input("How many? "))
+
+            if quantity >= 1:
+                for i in range(quantity):
+                    order.append(item)
+            print(f"Added {quantity} {item}(s) to your order")
+
      elif user_options == "3":
-          which_item= input("Removing which item?: ")
-          quantity=input("How many?: ")
-          print("REMOVED")
+            which_item= input("Removing which item?: ")
+            if item in menu:
+                quantity=input("How many?: ")
+            if item in order:
+                order.remove(item)
+            print(f"Removed {item} from your order")
+          
      elif user_options == "4":
           show_order(order, menu)
+          
      elif user_options == "5":
           receipt= receipt(name,order,menu, user_member)
 
