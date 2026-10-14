@@ -1,4 +1,4 @@
-cafe_name = "Python Café"
+cafe_name = "The Daily Tea"
 tax_rate = 0.08
 
 menu = {
@@ -15,7 +15,7 @@ order = []
 
 def greet_user(name):
      print(f"Hello {name}, Welcome to {cafe_name} ")
-name= input("Enter Your name: ")
+name= input("Hello Costumer!, Please Enter Your name: ")
 greet_user(name)
 
 
@@ -83,11 +83,10 @@ while True:
      print("5. Checkout")
 
      user_options= input( "Choose an option (1-5):  ")
-
+     
     
-
      if user_options == "1":
-          show_menu(menu)
+        show_menu(menu)
           
 
      elif user_options == "2":
@@ -114,11 +113,11 @@ while True:
           
      elif user_options == "5":
         receipt(name,order,menu, user_member)
+     elif user_options >"5":
+        print("Please choose from (1-5): ")
         
 
 
 
     
    
-
-
