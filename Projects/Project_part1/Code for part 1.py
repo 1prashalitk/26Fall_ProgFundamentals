@@ -20,23 +20,23 @@ greet_user(name)
 
 
 def show_menu(menu):
-    if (order) == 0:
-        print("You have nothing in your cart.")
-    else:
-        print("--- Here is your ORDER---")
-        for item in order:
-            print(f"{item}: ${menu:.2f}")
-        print(f"Items: {(order)}")
+    print("-MENU-")
+    for item, price in menu.items():
+        print(f"{item}: ${price:.2f}")
+
 
     
 
 def show_order(order, menu):
-     if (order)==0:
+     if len(order)==0:
           print("Your cart is empty")
      else:
-          print("HERE IS YOUR ORDER")
+        print("HERE IS YOUR ORDER")
+        for item in order:
+            print(f"{item}: ${menu:.2f}")
+        print(f"Items: {len(order)}")
 
-def cal_subtotal(order,menu):
+def cal_subtotal(order, menu):
      for item in order:
         subtotal= menu[item]
      return subtotal
@@ -59,6 +59,7 @@ def receipt(name,order,menu, user_member):
      discount(cal_subtotal, user_member)
      discounted_subtotal= cal_subtotal- discount
      total= discounted_subtotal + tax_rate
+     return total
 
      print(" {cafe_name} RECEIPT " )
 
@@ -109,11 +110,11 @@ while True:
             print(f"Removed {item} from your order")
           
      elif user_options == "4":
-          show_order(order, menu)
+        show_order=(order, menu)
           
      elif user_options == "5":
-          receipt= receipt(name,order,menu, user_member)
-
+        receipt(name,order,menu, user_member)
+        
 
 
 
