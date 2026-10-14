@@ -1,0 +1,90 @@
+﻿Hello Costumer!, Please Enter Your name: Prashali
+Hello Prashali, Welcome to The Daily Tea
+Are you a Rewards Member? yes/no: no
+1. View menu
+2. Add an item
+3. Remove an item
+4. View my order
+5. Checkout
+Choose an option (1-5):  1
+``````MENU``````
+espresso: $2.00
+latte: $3.00
+boba: $4.00
+herbal tea: $4.50
+chocolate chip muffin: $2.50
+chicken wrap: $3.25
+vegan wrap: $3.75
+1. View menu
+2. Add an item
+3. Remove an item
+4. View my order
+5. Checkout
+Choose an option (1-5):  2
+What would you like to order? boba
+How many? 5
+Added 5 boba(s) to your order
+1. View menu
+2. Add an item
+3. Remove an item
+4. View my order
+5. Checkout
+Choose an option (1-5):  3
+Which item would you like to remove? boba
+boba has been removed from your order.
+1. View menu
+2. Add an item
+3. Remove an item
+4. View my order
+5. Checkout
+Choose an option (1-5):  1
+``````MENU``````
+espresso: $2.00
+latte: $3.00
+boba: $4.00
+herbal tea: $4.50
+chocolate chip muffin: $2.50
+chicken wrap: $3.25
+vegan wrap: $3.75
+1. View menu
+2. Add an item
+3. Remove an item
+4. View my order
+5. Checkout
+Choose an option (1-5):  4
+HERE IS YOUR ORDER
+boba: $4.00
+boba: $4.00
+boba: $4.00
+boba: $4.00
+Items: 4
+1. View menu
+2. Add an item
+3. Remove an item
+4. View my order
+5. Checkout
+Choose an option (1-5):  5
+The Daily Tea RECEIPT
+Customer: Prashali
+boba: $4.00
+boba: $4.00
+boba: $4.00
+boba: $4.00
+Subtotal: $16.00
+Discount: -$0.00
+Tax: $1.28
+Total: $17.28
+Join our Rewards Program!
+Have a great day, and thank you for shopping!
+
+
+
+
+** Process exited - Return Code: 0 **
+
+
+
+
+
+
+The screenshot did not fit all of the output, so I pasted it into this doc.
