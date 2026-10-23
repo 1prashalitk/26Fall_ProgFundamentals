@@ -1,9 +1,10 @@
 import sqlite3
 conn = sqlite3.connect("StudentRecords.db")
 cur = conn.cursor()
-
+#removing any existing table
 cur.execute("DROP TABLE IF EXISTS StudentRecords")
 
+#creating a table
 
 cur.execute("""
 CREATE TABLE StudentRecords (
@@ -14,7 +15,7 @@ CREATE TABLE StudentRecords (
 );
 
 """)
-
+#adding students and their records to the table
 StudentRecords= [ 
   (1, "Prashali", 18, "Computer Science Cyber Security"),
   (2, "Kayla", 22, "Data Science"),
@@ -29,7 +30,7 @@ cur.executemany("INSERT INTO StudentRecords VALUES (?, ?, ?, ?)", StudentRecords
 print("StudentRecords without ID")
 for row in cur.execute("SELECT name, age, major FROM StudentRecords"):
     print(row)
-
+#using a while true loop for the user input so that is runs if they dont type whats needed
 while True:
     user_input= input("Do you want to add a New Student? (yes/no): ").lower()
     if user_input in ("yes","no"):
@@ -61,7 +62,7 @@ while True:
 
 
     print("Please Enter yes or no: ")
-
+#adding a new id with cur.fetchcone
 
 cur.execute("SELECT MAX(id) FROM StudentRecords")
 new_id = cur.fetchone()[0] + 1
