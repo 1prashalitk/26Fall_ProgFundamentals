@@ -42,10 +42,12 @@ while True:
     if add_name:
         break
     print("Name cannot be empty")
-    add_name= input("Enter New Student Name: ")
+    
+    
 
 while True:
     add_age= int(input("Enter New Student Age: "))
+    
     break
     
 while True:
@@ -61,10 +63,15 @@ while True:
     print("Please Enter yes or no: ")
 
 
-new_id= "6"
+cur.execute("SELECT MAX(id) FROM StudentRecords")
+new_id = cur.fetchone()[0] + 1
 
-cur.execute("INSERT INTO StudentRecords VALUES (?, ?, ?, ?)",new_id, add_name, add_age, add_major)
-
+cur.execute(
+    "INSERT INTO StudentRecords VALUES (?, ?, ?, ?)",
+    (new_id, add_name, add_age, add_major)
+)
+print("Student Added")
+conn.commit()
 conn.close()
 
 
