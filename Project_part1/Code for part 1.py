@@ -1,7 +1,7 @@
 cafe_name = "Python Café"
 tax_rate = 0.08
 
-menu = {
+menu ={
     "espresso": 2.00,
     "latte": 3.00,
     "boba": 4.05,
