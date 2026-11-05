@@ -7,11 +7,10 @@
 # IMPORTANT: close Thonny before running this, only one program can use the port.
 import time
 import serial # from the pyserial package
-PORT = "COM4" # <-- CHANGE to your board's port (see Device Manager)
+PORT = "dev/ttyACM0" # <-- CHANGE to your board's port (see Device Manager)
 BAUD = 115200
 def ask_board(ser, command):
-    """Send a one-letter command to the board and return the number it replies
-with."""
+    """Send a one-letter command to the board and return the number it replies with."""
     ser.reset_input_buffer() # discard any stale data
     ser.write((command + "\n").encode()) # send command + newline
     # Read lines until one starts with DATA (ignores any boot messages)
@@ -21,7 +20,10 @@ with."""
             raise TimeoutError("No reply from board")
         if line.startswith("DATA,"):
             return float(line.split(",")[2])
+
+    
 # TODO 1: write the DatabaseManager class here (sqlite3).
+
 # TODO 2: write the temperature function here (ask the board with "T",
 # display the value, and log it to the database).
 # TODO 3: write the humidity function here (ask the board with "H",
