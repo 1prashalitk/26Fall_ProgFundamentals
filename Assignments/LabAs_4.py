@@ -95,31 +95,31 @@ def main():
 
     while True:
 
-            print("Please choose from the following options:")
-            print("T - Temperature")
-            print("H - Humidity")
-            print("0 - Both")
-            print("V - View Log History")
+        print("Please choose from the following options:")
+        print("T - Temperature")
+        print("H - Humidity")
+        print("0 - Both")
+        print("V - View Log History")
 
-            User_input = input("Enter choice: ").strip().upper()
+        User_input = input("Enter choice: ").strip().upper()
 
-            if User_input == "T":
+        if User_input == "T":
                 db.request_display_log_temperature(ser)
 
-            elif User_input == "H":
+        elif User_input == "H":
                 db.request_display_log_humidity(ser)
 
-            elif User_input == "0":
+        elif User_input == "0":
                 db.request_display_log_temperature(ser)
                 db.request_display_log_humidity(ser)
 
-            elif User_input == "V":
-                records = db.show_all_data()
-                for record in records:
-                    print(record)
+        elif User_input == "V":
+            records = db.show_all_data()
+            for record in records:
+                print(record)
 
-            else:
-                print("Invalid Please enter T, H, 0, or V.")
+        else:
+            print("Invalid Please enter T, H, 0, or V.")
     db.close_database()
     ser.close()
 if __name__ == "__main__":
