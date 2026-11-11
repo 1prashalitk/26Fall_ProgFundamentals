@@ -22,19 +22,20 @@ print(f"Hello {greet_user}, Welcome to the Python Cafe!")
 
 def show_menu(menu):
     print(" MENU ")
-    for item, price in menu:
+    for item, price in menu.itmes():
         print(f"{item}: ${price:.2f}")
 
 def show_order(order, menu):
-     if (order)==0:
+     if len(order)==0:
           print("Your cart is empty")
      else:
           print("HERE IS YOUR ORDER")
 
-def Calculate_subtotal(order,menu):
-     for item in order:
-          subtotal+= menu[item]
-     return subtotal
+def calculate_subtotal(order, menu):
+    subtotal = 0
+    for item in order:
+        subtotal += menu[item]
+    return subtotal
 
 
 user_member= input("Are you a Rewards Member? yes/no: ").lower()
